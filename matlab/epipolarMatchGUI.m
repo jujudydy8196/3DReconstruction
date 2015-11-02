@@ -61,7 +61,7 @@ end
     ys = -(l(1) * xs + l(3))/l(2);
   end
 
-  plot(x,y, '*', 'MarkerSize', 10, 'LineWidth', 2);
+  plot(x,y, '*', 'MarkerSize', 5, 'LineWidth', 2);
 
   subplot 122
 
@@ -71,7 +71,7 @@ subplot(1,2,2)
 hold on;
 
 [x2, y2] = epipolarCorrespondence(I1, I2, F, x, y)
-plot(x2, y2, 'ro', 'MarkerSize', 8, 'LineWidth', 3);
+plot(x2, y2, 'ro', 'MarkerSize', 5, 'LineWidth', 2);
 coordsIM1 = [coordsIM1; x,y]
 coordsIM2 = [coordsIM2; x2, y2]
 
