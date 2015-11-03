@@ -19,7 +19,6 @@ bestInliers=[];
 
 th=100;
 for j=1:1000
-    j
     idx = randperm(length(pts1),7);
     tempF = sevenpoint( pts1(idx,:), pts2(idx,:), M );
     if isempty(tempF{1})
@@ -51,6 +50,6 @@ for j=1:1000
     end
 end
 maxInliers
-F=sevenpoint(pts1(bestInliers,:),pts2(bestInliers,:),M);
+F=eightpoint(pts1(bestInliers,:),pts2(bestInliers,:),M);
 end
 
