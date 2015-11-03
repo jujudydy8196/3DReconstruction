@@ -23,14 +23,13 @@ l=l/normalize;
 [h,w,~]=size(im1);
 
 % W=[3 5 10];
-windowSize=21;
+windowSize=5;
 w_half=floor(windowSize/2);
 im1window=im1(round(y1-w_half:y1+w_half),round(x1-w_half:x1+w_half));
 G = fspecial('gaussian',[windowSize windowSize],1);
 
 minDiff=Inf;
 bestAns=[];
-abs(l(1)/l(2))
 
 if abs(l(1)/l(2))>1
     %vertical

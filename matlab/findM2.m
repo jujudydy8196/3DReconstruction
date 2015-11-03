@@ -17,8 +17,11 @@ bestP=[];
 for i=1:4
     M2=M2s(:,:,i);
     C2=K2*M2;
-    [ P ] = triangulate( M1, pts1, M2, pts2 );
+    [ P ] = triangulate( C1, pts1, C2, pts2 );
     error=0;
+    if all(P(:,3) > 0)
+        break;
+    end    
     for j=1:length(pts1)
         if error>bestError
             break;
@@ -35,4 +38,4 @@ for i=1:4
         bestM2=M2s(:,:,i);
     end
 end
-save('q2_5.mat','bestM2','pts1','pts2','bestP');
+% save('q2_5.mat','bestM2','pts1','pts2','bestP');

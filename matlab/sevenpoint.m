@@ -33,7 +33,7 @@ F2=u2*diag([s2(1),s2(5),0])*v2';
 
 old=digits(4);
 syms a;
-P=vpa(solve(det(a*F1+(1-a)*F2)==0,'a'))
+P=vpa(solve(det(a*F1+(1-a)*F2)==0,'a'));
 % 
 % F=P(1)*F1+(1-P(1))*F2;
 % T=[1/M 0 0; 0 1/M 0; 0 0 1];
@@ -48,7 +48,7 @@ P=vpa(solve(det(a*F1+(1-a)*F2)==0,'a'))
     
 F=cell(1);
 for i=1:length(P)
-    isreal(P(i))
+%     isreal(P(i));
     if isreal(P(i))
         f=P(i)*F1+(1-P(i))*F2;
         T=[1/M 0 0; 0 1/M 0; 0 0 1];
